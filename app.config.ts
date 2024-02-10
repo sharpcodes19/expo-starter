@@ -1,8 +1,8 @@
 export default {
 	expo: {
-		name: 'expo-nw',
-		slug: 'expo-nw',
-		scheme: 'expo-nw',
+		name: 'expo-starter',
+		slug: 'expo-starter',
+		scheme: 'expo-starter',
 		version: '1.0.0',
 		orientation: 'portrait',
 		icon: './assets/app/icon.png',
@@ -21,7 +21,7 @@ export default {
 				foregroundImage: './assets/app/adaptive-icon.png',
 				backgroundColor: '#ffffff',
 			},
-			package: 'com.sharpcodes19.exponw',
+			package: 'com.sharpcodes19.expostarter',
 		},
 		web: {
 			favicon: './assets/app/favicon.png',

@@ -1,7 +1,6 @@
 import { z } from 'zod'
 
 const envSchema = z.object({
-	EXPO_PUBLIC_API_BASE_URL: z.string().url(),
 	NODE_ENV: z
 		.enum(['test', 'development', 'production'])
 		.default('development'),
