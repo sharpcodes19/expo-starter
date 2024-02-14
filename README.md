@@ -1,5 +1,7 @@
 ## Installation
 
+Requires Java SDK ```version v17.0.10```
+
 This project is using [`expo-dev-client`](https://docs.expo.dev/develop/development-builds/introduction/).
 
 If you are using a device, you need to enable the device's `Development Mode > USB debugging`.
