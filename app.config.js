@@ -40,6 +40,7 @@ export default {
 					},
 				},
 			],
+			"expo-notifications",
 			"expo-router",
 		],
 		experiments: {
