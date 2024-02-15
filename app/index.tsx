@@ -1,7 +1,7 @@
-import { View } from 'react-native'
+import { ColStack } from "@/components"
 
 const App = () => {
-	return <View className="flex-1"></View>
+	return <ColStack className="flex-1"></ColStack>
 }
 
 export default App

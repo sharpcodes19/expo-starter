@@ -5,11 +5,23 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@app": [
+        "./app.config.js"
+      ],
+      "@tw": [
+        "./tailwind.config.ts"
       ]
     }
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "app.config.js",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
   ]
 }

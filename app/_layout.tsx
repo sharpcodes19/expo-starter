@@ -1,23 +1,18 @@
-import '@/global.css'
+import "@/global.css"
 
-import NetInfo from '@react-native-community/netinfo'
-
-import { AppProviders } from '@/lib'
-import { onlineManager } from '@tanstack/react-query'
-import { Slot } from 'expo-router'
-import { useNotifications } from '@/hooks'
+import { AppProviders } from "@/lib"
+import { Slot, Stack } from "expo-router"
+import { useNet, useNotifications } from "@/hooks"
 
 const AppLayout = () => {
-	onlineManager.setEventListener((setOnline) => {
-		return NetInfo.addEventListener((state) => {
-			setOnline(state.isConnected ?? false)
-		})
-	})
+	useNet()
 	useNotifications()
 
 	return (
 		<AppProviders>
-			<Slot />
+			<Stack>
+				<Stack.Screen name="index" />
+			</Stack>
 		</AppProviders>
 	)
 }

@@ -1,14 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-	// NOTE: Update this to include the paths to all of your component files.
-	content: ['./app/**/*.{js,jsx,ts,tsx}'],
-	presets: [require('nativewind/preset')],
-	theme: {
-		extend: {
-			fontFamily: {
-				sans: 'Regular',
-			},
-		},
-	},
-	plugins: [],
-}
+const {
+	readDefaultTsConfig,
+} = require('@swc-node/register/read-default-tsconfig')
+const { register } = require('@swc-node/register/register')
+const path = require('path')
+register(readDefaultTsConfig(path.join(__dirname, 'tsconfig.json')))
+module.exports = require('./tailwind.config.ts').default

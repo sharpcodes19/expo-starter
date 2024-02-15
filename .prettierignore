@@ -1,0 +1,5 @@
+.eas
+.github
+assets
+yarn.lock
+node_modules

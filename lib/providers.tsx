@@ -2,11 +2,12 @@ import {
 	QueryClient,
 	QueryClientProvider,
 	focusManager,
-} from '@tanstack/react-query'
-import { useEffect } from 'react'
-import { AppState, AppStateStatus, Platform } from 'react-native'
-import { Inter_400Regular, useFonts } from '@expo-google-fonts/inter'
-import { SplashScreen } from 'expo-router'
+} from "@tanstack/react-query"
+import { useEffect } from "react"
+import { AppState, AppStateStatus, Platform } from "react-native"
+import { Inter_400Regular, useFonts } from "@expo-google-fonts/inter"
+import { RootSiblingParent } from "react-native-root-siblings"
+import { SplashScreen } from "expo-router"
 
 SplashScreen.preventAutoHideAsync()
 
@@ -19,9 +20,9 @@ const AppProviders = ({ children }: PropsWithChildren) => {
 		if (fontError) throw fontError
 
 		const subscribe = AppState.addEventListener(
-			'change',
+			"change",
 			(status: AppStateStatus) => {
-				if (Platform.OS !== 'web') focusManager.setFocused(status === 'active')
+				if (Platform.OS !== "web") focusManager.setFocused(status === "active")
 			}
 		)
 
@@ -30,7 +31,11 @@ const AppProviders = ({ children }: PropsWithChildren) => {
 		return () => subscribe.remove()
 	}, [fontError, isFontLoaded])
 
-	return <QueryClientProvider client={client}>{children}</QueryClientProvider>
+	return (
+		<QueryClientProvider client={client}>
+			<RootSiblingParent>{children}</RootSiblingParent>
+		</QueryClientProvider>
+	)
 }
 
 export default AppProviders

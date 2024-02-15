@@ -1,18 +1,18 @@
-import useAppState from './useAppState'
+import useAppState from "./useAppState"
 import {
 	requestPermissionsAsync,
 	getLastNotificationResponseAsync,
 	addNotificationResponseReceivedListener,
-} from 'expo-notifications'
-import { router } from 'expo-router'
-import { useEffect } from 'react'
+} from "expo-notifications"
+import { Href, router } from "expo-router"
+import { useEffect } from "react"
 
 const useNotifications = () => {
 	const { setPermissions, permissions } = useAppState()
 
 	useEffect(() => {
 		let isMounted = true
-		const processUrl = (url: string) => {
+		const processUrl = (url: Href<string>) => {
 			return url
 		}
 
@@ -20,7 +20,7 @@ const useNotifications = () => {
 			const { status } = await requestPermissionsAsync()
 			setPermissions({ ...permissions, notification: status })
 
-			if (status === 'granted') {
+			if (status === "granted") {
 				const res = await getLastNotificationResponseAsync()
 				if (isMounted) {
 					const url = res?.notification.request.content.data.url
