@@ -1166,6 +1166,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@babel/runtime@^7.23.7":
+  version "7.24.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.24.0.tgz#584c450063ffda59697021430cb47101b085951e"
+  integrity sha512-Chk32uHMg6TnQdvw2e9IlqPpFX/6NLuK0Ys2PqLb7/gL5uFn9mXvK715FGLlOLQrcO4qIkNHkvPGktzzXexsFw==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.0.0", "@babel/template@^7.22.15", "@babel/template@^7.23.9":
   version "7.23.9"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.23.9.tgz#f881d0487cba2828d3259dcb9ef5005a9731011a"
@@ -2247,12 +2254,13 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@sharpcodes/api@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@sharpcodes/api/-/api-0.0.3.tgz#5156e1c904924b2819b84b24fee45a3b3a347bdb"
-  integrity sha512-M1S8gSbXObGAxWw2YbP19IPeoNgB4upXHV1c6LzY6mro3bJlvlvxzhChBt+nU/6R/JtpivWEtBDm4mJ2JThVAQ==
+"@sharpcodes/api@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@sharpcodes/api/-/api-0.0.7.tgz#466eee58d63dff80a1bfba9326f84b4f0a67e8f1"
+  integrity sha512-tbjANKgeA8wGevLv2V8UcDCTod5mHakMWxY81F88ByA0AXsycCRORASYX5BG2kh0BMxi9Lm+Y8ir/7tVTtxmbg==
   dependencies:
-    react-hook-form "^7.50.1"
+    clsx "^2.1.0"
+    tailwind-merge "^2.2.1"
 
 "@shopify/flash-list@1.6.3":
   version "1.6.3"
@@ -7642,6 +7650,13 @@ svgo@^3.0.2:
     css-what "^6.1.0"
     csso "^5.0.5"
     picocolors "^1.0.0"
+
+tailwind-merge@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-2.2.1.tgz#3f10f296a2dba1d88769de8244fafd95c3324aeb"
+  integrity sha512-o+2GTLkthfa5YUt4JxPfzMIpQzZ3adD1vLVkvKE1Twl9UAhGsEbIZhHHZVRttyW177S8PDJI3bTQNaebyofK3Q==
+  dependencies:
+    "@babel/runtime" "^7.23.7"
 
 tailwindcss@^3.4.1:
   version "3.4.1"
