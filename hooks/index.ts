@@ -1,5 +1,6 @@
 export { default as useRefetchOnFocus } from "./useRefetchOnFocus"
 export { default as useTheme } from "./useTheme"
 export { default as useAppState } from "./useAppState"
-export { default as useNotifications } from "./useNotifications"
+export { default as useNotificationObserver } from "./useNotificationObserver"
 export { default as useNet } from "./useNet"
+export { default as useFont } from "./useFont"

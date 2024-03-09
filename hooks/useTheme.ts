@@ -1,34 +1,21 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useEffect } from 'react'
-import { create } from 'zustand'
-
-type Theme = 'dark' | 'light' | 'system'
-
-type S = {
-	theme: Theme
-	setTheme: (theme: Theme) => void
-}
-
-const createStateContext = create<S>((set) => ({
-	theme: 'system',
-	setTheme: (theme) => {
-		AsyncStorage.setItem(process.env.EXPO_PUBLIC_STORAGE_KEY_THEME, theme)
-		set({ theme })
-	},
-}))
+import AsyncStorage from "@react-native-async-storage/async-storage"
+import { useEffect } from "react"
+import { useColorScheme } from "nativewind"
 
 const useTheme = () => {
-	const ctx = createStateContext()
+	const nwColorScheme = useColorScheme()
+	const { colorScheme, setColorScheme } = nwColorScheme
 
 	useEffect(() => {
 		AsyncStorage.getItem(process.env.EXPO_PUBLIC_STORAGE_KEY_THEME)
-			.then((theme) => theme as Theme | null)
+			.then((theme) => theme as typeof colorScheme | null)
 			.then((theme) => {
-				ctx.setTheme(theme ?? 'system')
+				const colorScheme = theme ?? "system"
+				setColorScheme(colorScheme)
 			})
-	}, [ctx])
+	}, [])
 
-	return ctx
+	return nwColorScheme
 }
 
 export default useTheme

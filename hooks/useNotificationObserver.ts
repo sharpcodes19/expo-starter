@@ -7,7 +7,7 @@ import {
 import { Href, router } from "expo-router"
 import { useEffect } from "react"
 
-const useNotifications = () => {
+const useNotificationObserver = () => {
 	const { setPermissions, permissions } = useAppState()
 
 	useEffect(() => {
@@ -45,4 +45,4 @@ const useNotifications = () => {
 	}
 }
 
-export default useNotifications
+export default useNotificationObserver

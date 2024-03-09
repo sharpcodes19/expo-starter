@@ -1,4 +1,4 @@
-import { cn } from "@/utils"
+import { cn } from "@/lib"
 import { FormControlBase } from "@sharpcodes/api"
 import { Control, FieldValues, Path } from "react-hook-form"
 import { TextInput, TextInputProps } from "react-native"
